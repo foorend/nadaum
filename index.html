@@ -1,31 +1,56 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>나다움 : MORE ME — 지원</title>
+<title>MORE ME — Support</title>
 <style>
-  body { font-family: -apple-system, "Apple SD Gothic Neo", sans-serif; max-width: 680px;
-         margin: 0 auto; padding: 32px 20px 80px; line-height: 1.7; color: #26241F; background: #F5F4F1; }
-  h1 { font-size: 1.5rem; } h2 { font-size: 1.1rem; margin-top: 32px; }
+  :root { --ink:#26241F; --soft:#5C594F; --bg:#F5F4F1; --line:#E2E0D8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink:#ECEAE3; --soft:#B4B1A6; --bg:#1C1B18; --line:#38362F; }
+  }
+  * { box-sizing: border-box; }
+  body { font-family: "Inter", -apple-system, "Apple SD Gothic Neo", sans-serif;
+    max-width: 680px; margin: 0 auto; padding: 32px 20px 80px; line-height: 1.7;
+    color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  h1 { font-size: 1.75rem; margin: 0 0 8px; letter-spacing: -0.01em; }
+  h2 { font-size: 1.1rem; margin-top: 40px; }
+  .tag { color: var(--soft); font-size: 0.95rem; margin: 0 0 24px; }
+  strong { color: var(--ink); }
+  a { color: var(--ink); }
+  .lang { position: absolute; top: 24px; right: 24px; font-size: 0.85rem; color: var(--soft); }
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<h1>나다움 : MORE ME</h1>
-<p>사진 한 장으로 하루를 기록하면, 1,000개의 도트로 태어난 나의 동물 캐릭터가 살아온 시간의 색으로 물듭니다.</p>
+<a class="lang" href="/nadaum/ko.html">한국어</a>
+<h1>MORE ME</h1>
+<p class="tag">A self-growth journal where you photograph one hour of your day and a 1,000-dot animal fills in with the colors of your real life.</p>
 
-<h2>자주 묻는 질문</h2>
-<p><strong>Q. 사진은 어디에 저장되나요?</strong><br>
-내 기기에만 24시간 보관된 뒤 자동 삭제됩니다. 서버로 전송되지 않아요.</p>
-<p><strong>Q. 왜 1시간에 한 번만 찍을 수 있나요?</strong><br>
-하루는 24칸이니까요. 한 시간의 삶이 도트 하나의 재료가 됩니다.</p>
-<p><strong>Q. 기록을 놓치면 어떻게 되나요?</strong><br>
-괜찮아요. 나다움에는 벌점도, 스트릭도 없습니다. 찍은 시간만큼만 내가 됩니다.</p>
-<p><strong>Q. 동물을 바꿀 수 있나요?</strong><br>
-1년에 한 번 바꿀 수 있어요. 색은 그대로 새 실루엣에 이어집니다.</p>
+<h2>FAQ</h2>
+<p><strong>Q. Where are my photos stored?</strong><br>
+On your device only. They're kept for 24 hours so you can see them in the Today feed, then deleted automatically. Nothing is uploaded to a server.</p>
 
-<h2>문의 · 지원</h2>
-<p>이메일: <a href="mailto:alexthefood@gmail.com">alexthefood@gmail.com</a></p>
-<p><a href="privacy.html">개인정보 처리방침</a></p>
+<p><strong>Q. Why only one photo per hour?</strong><br>
+Because a day has 24 slots. One hour of your life becomes the raw material for one dot.</p>
+
+<p><strong>Q. What happens if I miss a day?</strong><br>
+Nothing bad. MORE ME has no streaks, no goals, no shame. Your animal just waits. You only fill what you actually lived.</p>
+
+<p><strong>Q. Can I change my animal?</strong><br>
+Once a year. The dots you've earned stay — they carry over to the new silhouette.</p>
+
+<p><strong>Q. What's MORE ME PLUS?</strong><br>
+A subscription that removes all ads. Nothing else is gated — every feature stays free. It exists to support the app without changing what it is.</p>
+
+<p><strong>Q. How is the subscription billed?</strong><br>
+Through your Apple ID. You can cancel any time in Settings → Apple ID → Subscriptions. RevenueCat handles the entitlement logic.</p>
+
+<h2>Contact</h2>
+<p>Email: <a href="mailto:alexthefood@gmail.com">alexthefood@gmail.com</a></p>
+<p><a href="privacy.html">Privacy Policy</a></p>
+
+<h2>The app</h2>
+<p><a href="https://apps.apple.com/app/id6806629295">Download on the App Store</a></p>
 </body>
 </html>
