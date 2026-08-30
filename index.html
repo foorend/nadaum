@@ -3,54 +3,155 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MORE ME — Support</title>
+<title>MORE ME — 1,000 dots of you</title>
+<meta name="description" content="A self-growth journal where you photograph one hour of your day and a 1,000-dot animal fills with the colors of your real life. No streaks. No goals. No shame.">
+<meta property="og:title" content="MORE ME — 1,000 dots of you">
+<meta property="og:description" content="A journal that watches, not judges. One photo per hour. Over 40 days, your 1,000-dot animal fills with the colors of your life.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://foorend.github.io/nadaum/og.png">
+<meta property="og:url" content="https://foorend.github.io/nadaum/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://foorend.github.io/nadaum/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&display=swap" rel="stylesheet">
 <style>
-  :root { --ink:#26241F; --soft:#5C594F; --bg:#F5F4F1; --line:#E2E0D8; }
+  :root {
+    --ink:#26241F; --soft:#5C594F; --bg:#F5F4F1; --surface:#FFFFFF; --line:#E2E0D8;
+    --accent:#2E8B57; --dot-gray:#D8D6CE;
+  }
   @media (prefers-color-scheme: dark) {
-    :root { --ink:#ECEAE3; --soft:#B4B1A6; --bg:#1C1B18; --line:#38362F; }
+    :root { --ink:#ECEAE3; --soft:#B4B1A6; --bg:#1C1B18; --surface:#24231F; --line:#38362F;
+            --accent:#3BA26B; --dot-gray:#45433C; }
   }
   * { box-sizing: border-box; }
-  body { font-family: "Inter", -apple-system, "Apple SD Gothic Neo", sans-serif;
-    max-width: 680px; margin: 0 auto; padding: 32px 20px 80px; line-height: 1.7;
-    color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
-  h1 { font-size: 1.75rem; margin: 0 0 8px; letter-spacing: -0.01em; }
-  h2 { font-size: 1.1rem; margin-top: 40px; }
-  .tag { color: var(--soft); font-size: 0.95rem; margin: 0 0 24px; }
-  strong { color: var(--ink); }
-  a { color: var(--ink); }
-  .lang { position: absolute; top: 24px; right: 24px; font-size: 0.85rem; color: var(--soft); }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "Inter", -apple-system, "Apple SD Gothic Neo", sans-serif;
+    line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+  header { padding: 32px 24px 8px; }
+  header .row { max-width: 820px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+  header a { color: var(--soft); text-decoration: none; font-size: 0.9rem; margin-left: 16px; }
+  header a:hover { color: var(--ink); }
+  .brand { font-weight: 800; font-size: 1.05rem; letter-spacing: -0.01em; }
+  /* Hero */
+  .hero { padding: 40px 24px 80px; text-align: center; }
+  .hero h1 { font-size: clamp(2.2rem, 6vw, 4rem); font-weight: 900; margin: 0 0 12px;
+    letter-spacing: -0.03em; text-wrap: balance; }
+  .hero p.lead { font-size: clamp(1.1rem, 2vw, 1.35rem); color: var(--soft);
+    max-width: 620px; margin: 0 auto 28px; text-wrap: balance; }
+  .cta { display: inline-flex; align-items: center; gap: 8px; background: var(--ink);
+    color: var(--bg); padding: 14px 22px; border-radius: 12px; text-decoration: none;
+    font-weight: 700; }
+  .cta:hover { transform: translateY(-1px); }
+  .cta-sub { display: block; margin-top: 12px; color: var(--soft); font-size: 0.85rem; }
+  .hero-img { display: block; margin: 40px auto 0; max-width: 320px; width: 80%;
+    border-radius: 24px; box-shadow: 0 30px 80px -20px rgba(0,0,0,0.25); }
+  /* Value grid */
+  .values { padding: 60px 0; border-top: 1px solid var(--line); }
+  .values h2 { text-align: center; font-size: clamp(1.5rem, 3vw, 2.2rem); margin: 0 0 8px;
+    letter-spacing: -0.02em; }
+  .values .lead { text-align: center; color: var(--soft); margin: 0 0 40px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+    padding: 24px; }
+  .card b { display: block; margin-bottom: 6px; font-weight: 700; }
+  .card p { margin: 0; color: var(--soft); font-size: 0.95rem; }
+  /* Screenshots */
+  .shots { padding: 60px 0; border-top: 1px solid var(--line); overflow-x: auto; }
+  .shots-inner { display: flex; gap: 16px; padding: 0 24px; scroll-snap-type: x mandatory; }
+  .shots img { flex: 0 0 240px; width: 240px; border-radius: 20px; scroll-snap-align: center;
+    box-shadow: 0 12px 30px -10px rgba(0,0,0,0.2); }
+  /* Manifesto */
+  .manifesto { padding: 80px 0; border-top: 1px solid var(--line); }
+  .manifesto h2 { font-size: clamp(1.4rem, 3vw, 2rem); letter-spacing: -0.02em; margin: 0 0 20px; }
+  .manifesto p { font-size: 1.1rem; margin: 0 0 16px; }
+  .manifesto p em { font-style: normal; background: linear-gradient(180deg, transparent 62%, rgba(46,139,87,0.18) 62%);
+    padding: 0 2px; }
+  /* Bottom CTA */
+  .bottom { padding: 100px 24px; text-align: center; border-top: 1px solid var(--line); }
+  .bottom h2 { font-size: clamp(1.6rem, 3.5vw, 2.5rem); letter-spacing: -0.02em; margin: 0 0 20px; }
+  /* Footer */
+  footer { padding: 40px 24px; color: var(--soft); font-size: 0.85rem; text-align: center;
+    border-top: 1px solid var(--line); }
+  footer a { color: var(--soft); }
 </style>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<a class="lang" href="/nadaum/ko.html">한국어</a>
-<h1>MORE ME</h1>
-<p class="tag">A self-growth journal where you photograph one hour of your day and a 1,000-dot animal fills in with the colors of your real life.</p>
+<header>
+  <div class="row">
+    <div class="brand">MORE ME</div>
+    <nav>
+      <a href="https://apps.apple.com/app/id6806629295">App Store</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="/nadaum/ko.html">한국어</a>
+    </nav>
+  </div>
+</header>
 
-<h2>FAQ</h2>
-<p><strong>Q. Where are my photos stored?</strong><br>
-On your device only. They're kept for 24 hours so you can see them in the Today feed, then deleted automatically. Nothing is uploaded to a server.</p>
+<section class="hero">
+  <div class="wrap">
+    <h1>Every day makes me more me.</h1>
+    <p class="lead">A journal that watches, not judges. One photo per hour. Over 40 days, your 1,000-dot animal fills with the colors of the life you actually lived.</p>
+    <a class="cta" href="https://apps.apple.com/app/id6806629295">Download on the App Store</a>
+    <span class="cta-sub">Free · iOS 16+ · No account. No cloud.</span>
+    <img class="hero-img" src="hero.png" alt="Filled cat silhouette on the MORE ME app" onerror="this.style.display='none'">
+  </div>
+</section>
 
-<p><strong>Q. Why only one photo per hour?</strong><br>
-Because a day has 24 slots. One hour of your life becomes the raw material for one dot.</p>
+<section class="values">
+  <div class="wrap">
+    <h2>Not a productivity app.</h2>
+    <p class="lead">Five things it refuses to be.</p>
+    <div class="grid">
+      <div class="card"><b>No streaks.</b><p>Missed a day? A week? The animal just waits.</p></div>
+      <div class="card"><b>No goals.</b><p>You don't set a number. You just live.</p></div>
+      <div class="card"><b>No shame.</b><p>The app can't punish you. It doesn't have that button.</p></div>
+      <div class="card"><b>No cloud.</b><p>Photos stay on your device for 24h, then delete themselves. Nothing is uploaded.</p></div>
+      <div class="card"><b>No advice.</b><p>You get colors, not lectures. Interpret your own picture.</p></div>
+    </div>
+  </div>
+</section>
 
-<p><strong>Q. What happens if I miss a day?</strong><br>
-Nothing bad. MORE ME has no streaks, no goals, no shame. Your animal just waits. You only fill what you actually lived.</p>
+<section class="shots">
+  <div class="shots-inner">
+    <img src="shot-1.png" alt="Filled cat silhouette on Today tab" onerror="this.style.display='none'">
+    <img src="shot-2.png" alt="Ten stats and cumulative dots on Me tab" onerror="this.style.display='none'">
+    <img src="shot-3.png" alt="Today feed with photo bubbles" onerror="this.style.display='none'">
+    <img src="shot-4.png" alt="MORE ME PLUS subscription card" onerror="this.style.display='none'">
+    <img src="shot-5.png" alt="30 animal picker on onboarding" onerror="this.style.display='none'">
+  </div>
+</section>
 
-<p><strong>Q. Can I change my animal?</strong><br>
-Once a year. The dots you've earned stay — they carry over to the new silhouette.</p>
+<section class="manifesto">
+  <div class="wrap">
+    <h2>Ten stats. Not three.</h2>
+    <p>Most journals reduce your life to Productivity, Wellness, and Social. That's a lie about how time actually works.</p>
+    <p>Cooking dinner isn't "rest" — it's <em>Care</em> + <em>Create</em>. Reading fiction isn't "learn" — it's <em>Explore</em>. Ten was the smallest number that stopped forcing us to lie.</p>
+    <p>Learn · Explore · Move · Care · Play · Work · Reflect · Create · Rest · Connect.</p>
+  </div>
+</section>
 
-<p><strong>Q. What's MORE ME PLUS?</strong><br>
-A subscription that removes all ads. Nothing else is gated — every feature stays free. It exists to support the app without changing what it is.</p>
+<section class="manifesto" style="border-top: 1px solid var(--line)">
+  <div class="wrap">
+    <h2>Why one photo per hour.</h2>
+    <p>Because a day has 24 slots — no more, no less.</p>
+    <p>The one-hour cooldown between photos is the whole point. If you could take ten photos in a row, the journal would drift back into being about you performing for the app. One per hour keeps it about the hour.</p>
+    <p>The green button turns red. It counts down. When your hour is up, it turns green again. You take the photo, or you don't.</p>
+  </div>
+</section>
 
-<p><strong>Q. How is the subscription billed?</strong><br>
-Through your Apple ID. You can cancel any time in Settings → Apple ID → Subscriptions. RevenueCat handles the entitlement logic.</p>
+<section class="bottom">
+  <h2>1,000 dots. 30 animals. One quiet mirror.</h2>
+  <a class="cta" href="https://apps.apple.com/app/id6806629295">Download on the App Store</a>
+</section>
 
-<h2>Contact</h2>
-<p>Email: <a href="mailto:alexthefood@gmail.com">alexthefood@gmail.com</a></p>
-<p><a href="privacy.html">Privacy Policy</a></p>
-
-<h2>The app</h2>
-<p><a href="https://apps.apple.com/app/id6806629295">Download on the App Store</a></p>
+<footer>
+  © 2026 Alex Kim · Made in Seoul · Built for
+  <a href="https://www.shipaton.com/">RevenueCat Shipaton 2026</a>
+  · <a href="privacy.html">Privacy</a>
+  · <a href="mailto:alexthefood@gmail.com">Contact</a>
+</footer>
 </body>
 </html>
